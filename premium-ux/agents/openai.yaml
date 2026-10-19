@@ -1,4 +1,0 @@
-interface:
-  display_name: "Premium UX"
-  short_description: "Clear states, consistent flows, useful recovery"
-  default_prompt: "Use $premium-ux to improve this user journey with clear states, consistent behavior, and useful recovery."

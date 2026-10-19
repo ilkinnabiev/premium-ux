@@ -1,56 +1,35 @@
 # premium-ux
 
-Skill для Codex, который помогает сделать пользовательские сценарии понятными и продуманными: объяснить происходящее, сохранить контроль пользователя и дать возможность продолжить работу после ошибки.
+An agent skill for clear product states, consistent user journeys, and useful recovery.
 
-## Что делает
+## Install
 
-- **Состояния.** Разбирает путь от действия до результата: ожидание, успех, ошибку, прерывание, отсутствие данных и ограничения — там, где они имеют смысл.
-- **Согласованность.** Сопоставляет термины, навигацию, действия, счётчики и сообщения между связанными экранами.
-- **Восстановление.** Помогает сохранить ввод, объяснить проблему и предложить выполнимый следующий шаг.
+Run with Node.js 22.20 or later:
 
-Работает с репозиторием, доступным интерфейсом, макетами, скриншотами или описанием функции. Выводы ограничены доступными материалами: скриншот показывает состояние, но не подтверждает работу сохранения или отмены.
-
-## Установка
-
-В Codex попросите встроенный установщик добавить skill из репозитория:
-
-```text
-$skill-installer Установи skill из https://github.com/ilkinnabiev/premium-ux/tree/main/premium-ux
+```sh
+npx skills add ilkinnabiev/premium-ux --skill premium-ux
 ```
 
-После установки начните новый чат и вызовите `$premium-ux` вместе с задачей.
+Choose your agent when prompted. Add `-g` to install across projects.
 
-## Использование
+For manual installation, copy [SKILL.md](SKILL.md) into a `premium-ux` folder in your agent's skills directory. Restart or reload your agent after installation.
 
-Аудит пользовательского сценария:
+The skill uses the Agent Skills format and requires no runtime dependencies, API keys, or configuration.
 
-```text
-$premium-ux Проведи аудит оформления заказа: от корзины до подтверждения.
-Покажи главные проблемы и конкретные исправления. Код пока не меняй.
-```
-
-Реализация улучшений:
+## Use
 
 ```text
-$premium-ux Улучши сохранение профиля: покажи ход сохранения, сохрани ввод
-при ошибке и дай возможность повторить действие. Внеси изменения в проект.
+Use premium-ux to improve the checkout flow. Implement the changes.
 ```
 
-Режим определяется запросом. При аудите skill описывает наблюдаемую проблему, её влияние и предлагаемое исправление. При запросе на реализацию — вносит изменения, опираясь на существующие компоненты и правила проекта.
+```text
+Use premium-ux to review this onboarding flow. Report the highest-impact issues without changing code.
+```
 
-Каждое решение должно отвечать на три вопроса: что произошло, что можно сделать сейчас и как продолжить путь к цели. Счётчики, даты, статусы и доступные действия должны соответствовать реальному поведению продукта.
+## What it does
 
-## Основа
+- Makes progress, outcomes, limits, and next steps clear.
+- Keeps navigation, language, and behavior consistent across screens.
+- Preserves useful work and provides recovery from errors and interruptions.
 
-Skill основан на идеях Тима Гейба из видео [The Psychology of Premium Apps](https://www.youtube.com/watch?v=8EAYZe6y3I8):
-
-- [01:47 — ясность состояния и контроль](https://www.youtube.com/watch?v=8EAYZe6y3I8&t=107s).
-- [04:09 — согласованность продукта](https://www.youtube.com/watch?v=8EAYZe6y3I8&t=249s).
-- [06:44 — поведение в сложных ситуациях](https://www.youtube.com/watch?v=8EAYZe6y3I8&t=404s).
-
-Формат вдохновлён skill **ponytail**: короткие инструкции, конкретные решения и минимальный объём изменений, достаточный для задачи.
-
-## Файлы
-
-- [`premium-ux/SKILL.md`](premium-ux/SKILL.md) — инструкции skill.
-- [`premium-ux/agents/openai.yaml`](premium-ux/agents/openai.yaml) — метаданные для Codex.
+Works with code, running interfaces, designs, screenshots, or a feature description. Follows the requested scope: review, design, or implementation. Reuses the product's existing patterns and distinguishes observed behavior from assumptions.
